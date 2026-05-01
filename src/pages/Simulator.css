@@ -1,0 +1,137 @@
+.simulator-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.progress-bar-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.step-indicators {
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-border);
+  transition: all var(--transition-normal);
+}
+
+.step-dot.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(26, 86, 219, 0.2);
+}
+
+.simulator-card {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sim-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.sim-icon {
+  color: var(--color-primary);
+  background-color: rgba(26, 86, 219, 0.1);
+  padding: 1.5rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.sim-tip {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.ballot-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.ballot-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 500;
+}
+
+.ballot-option:hover {
+  background-color: var(--color-background);
+}
+
+.ballot-option.selected {
+  border-color: var(--color-primary);
+  background-color: rgba(26, 86, 219, 0.05);
+}
+
+.ballot-option input {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.sticker {
+  display: inline-block;
+  background-color: var(--color-error);
+  color: white;
+  font-weight: 800;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  transform: rotate(-10deg);
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-md);
+  border: 2px dashed white;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.sticker-icon {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0) rotate(-30deg); opacity: 0; }
+  100% { transform: scale(1) rotate(-10deg); opacity: 1; }
+}
+
+.animate-in {
+  animation: slideLeft var(--transition-normal);
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
